@@ -9,7 +9,7 @@ int is_simple(int number)
       int j = 0;  
       if( number % i == 0 )
       {
-        printf("\"0\" число %d сложное\n", number);
+        printf("\"0\" number %d complicated\n", number);
         return 1;
         break;
       }     
@@ -18,7 +18,7 @@ int is_simple(int number)
   }
 
   {
-    printf("\"1\" число %d простое\n", number);
+    printf("\"1\" number %d simple\n", number);
     return 1;
   }
   
@@ -29,6 +29,7 @@ int main()
 {
   int inp_num;
   scanf ("%d" , &inp_num );
-  is_simple(inp_num);
+  printf("%d",is_simple(inp_num));
+  getchar(); getchar();
   return 0;
 }
