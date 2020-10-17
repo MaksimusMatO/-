@@ -1,35 +1,23 @@
 #include <stdio.h>
-
-int is_simple(int number) 
-{                   
-  if( number > 2 )
+#include <math.h>
+ 
+int power(int number, int power)
+{ 
+  float rez = 1;
+  for( int i = 0; i < power; i++)
   {
-    for( int i = 2; i < number; i++ )
-    { 
-      int j = 0;  
-      if( number % i == 0 )
-      {
-        printf("\"0\" number %d complicated\n", number);
-        return 1;
-        break;
-      }     
-      j++ ;
-    }
+    rez *= number;
   }
-
-  {
-    printf("\"1\" number %d simple\n", number);
-    return 1;
-  }
-  
-  return 0;
+  return rez;
 }
 
 int main()
 {
-  int inp_num;
-  scanf ("%d", &inp_num );
-  printf("%d", is_simple(inp_num) );
-  getchar(); getchar();
+  int N = 0, m = 0;
+  printf("Введите число: ");
+  scanf("%d", &N);
+  printf("Введите степень: ");
+  scanf("%d", &m);
+  printf("%.0d", power(N, m) );
   return 0;
 }
