@@ -14,27 +14,22 @@ int main()
 }
 
 int is_simple(int number) 
-{                   
-  if( number > 2 )
+{
+  if (number > 1)
   {
-    for( int i = 2; i < number; i++ )
-    { 
-      int j = 0;  
-      if( number % i == 0 )
+    for(int i = 2; i < number; i++)
+    {
+      if (number % i == 0)
       {
-        printf("\"0\" number %d complicated\n", number);
-
         return 0;
-        break;
-      }     
-      j++ ;
+      }
+      
+      return 1;
     }
   }
-
+  else
   {
-    printf("\"1\" number %d simple\n", number);
-
-    return 1;
+    printf("the number you entered is neither composite nor simple. \n");
   }
   
   return 0;
