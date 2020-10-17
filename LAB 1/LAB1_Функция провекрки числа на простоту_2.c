@@ -1,5 +1,18 @@
 #include <stdio.h>
 
+int is_simple(int number);
+
+int main()
+{
+  int inp_num;
+  scanf ("%d", &inp_num );
+  printf("%d", is_simple(inp_num) );
+  getchar(); 
+  getchar();
+
+  return 0;
+}
+
 int is_simple(int number) 
 {                   
   if( number > 2 )
@@ -10,7 +23,8 @@ int is_simple(int number)
       if( number % i == 0 )
       {
         printf("\"0\" number %d complicated\n", number);
-        return 1;
+
+        return 0;
         break;
       }     
       j++ ;
@@ -19,17 +33,9 @@ int is_simple(int number)
 
   {
     printf("\"1\" number %d simple\n", number);
+
     return 1;
   }
   
-  return 0;
-}
-
-int main()
-{
-  int inp_num;
-  scanf ("%d", &inp_num );
-  printf("%d", is_simple(inp_num) );
-  getchar(); getchar();
   return 0;
 }
