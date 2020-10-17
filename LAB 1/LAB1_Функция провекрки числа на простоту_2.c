@@ -28,8 +28,8 @@ int is_simple(int number)
 int main()
 {
   int inp_num;
-  scanf ("%d" , &inp_num );
-  printf("%d",is_simple(inp_num));
+  scanf ("%d", &inp_num );
+  printf("%d", is_simple(inp_num) );
   getchar(); getchar();
   return 0;
 }
