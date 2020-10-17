@@ -8,8 +8,7 @@ int power(int number, int power)
   {
     rez *= number;
   }
-  printf("%f", rez);
-  return 0;
+  return rez;
 }
 
 int main()
@@ -19,6 +18,6 @@ int main()
   scanf("%d", &N);
   printf("Введите степень: ");
   scanf("%d", &m);
-  power(N,m);
+  printf("%.0d", power(N,m));
   return 0;
 }
