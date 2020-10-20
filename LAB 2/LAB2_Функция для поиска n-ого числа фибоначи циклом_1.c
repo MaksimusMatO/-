@@ -8,6 +8,7 @@ int main(){
   scanf("%d\n", &fib_num);
   printf( "%ld", get_fibbonachi_via_cycle (fib_num) );
   getchar(); getchar();
+  
   return 0;
 }
 
@@ -20,5 +21,6 @@ long get_fibbonachi_via_cycle(int number)
     fib1 = fib2;
     fib2 = fib3; 
   }
+  
   return fib3;
 }
