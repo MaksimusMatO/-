@@ -12,6 +12,7 @@ int main()
   power(numb, sour, targ);
   getchar(); 
   getchar();
+  
   return 0;
 }
 
