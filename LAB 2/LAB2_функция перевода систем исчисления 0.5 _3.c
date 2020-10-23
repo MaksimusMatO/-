@@ -1,4 +1,4 @@
-nclude <stdio.h>
+#include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 
@@ -17,12 +17,13 @@ int main()
 
 void power(int number, int source, int target)
 {     
-  if( source <= 10  && target < 10 )
+  if( source <= 10  && target < 10 )// диапазон числовых значений из 10ной в  любую менее 10ной
   {
-    int  A[100], a = number;
+    int  A[100];
+    int a = number;
     int res = 0;
     int i = 0;
-    while( a > 0 )
+    while( a > 0 )// разложение по разрядам исходной системы исчисления
     { 
       A[i]= number / (pow (10, i) );
       A[i]= A[i] % 10;
@@ -30,14 +31,14 @@ void power(int number, int source, int target)
       a = a / 10;                         
     }
     int j = 0;
-    while( j != i ) 
+    while( j != i )// перевод в ведённую систему исчисления 
     {
       res += A[j] * (pow (source, j) );   
       j++;
     }
     i = 0, a = res;
     int c; 
-    while( a > 0 )
+    while( a > 0 )// разложение по разрядам в новой системе исчисления
     { 
       c = res % target;
       res= res / target;     
@@ -45,22 +46,22 @@ void power(int number, int source, int target)
       A[i] = c;
       a = a / target;
     }
-    while( i > 0 )
+    while( i > 0 )// вывод результата
     {
       printf("%d", A[i]);
       i--;
     }                    
   }
-  if( source == 0 || source == 1 )
+  if( source == 0 || source == 1 || target == 0 || target == 1 )// если система исходная или конечная равна 0 или 1
   {
     printf("0"); 
   }
-  if( target >= 10 && source >= 2 )
+  if( target >= 10 && source >= 2 )// перевод из любой в любую систему содержащую символьные значения
   {
     int  A[100], a = number;
     int res = 0;
     int i = 0;
-    while( a > 0 )
+    while( a > 0 )// разложение по разрядам в исходной
     { 
       A[i] = number / (pow (10, i) );           
       A[i] = A[i] % 10;            
@@ -68,17 +69,17 @@ void power(int number, int source, int target)
       a = a / 10;                       
     }
     int j = 0 ;
-    while( j != i )
+    while( j != i )// перевод в ведённую систему исчисления 
     {
       res += A[j] * (pow (source, j) );   
       j++;    
     }        
-    if( target > 10 )
+    if( target > 10 )// условие 1ое если конечная система больше десяти (это на всякий случай)
     {   
       char R[ i + 1 ];
       char res_ch = 0;
       j=0;
-      if( i <= 1)
+      if( i <= 1)// вывод одноразрядных чисел 
       {
         while( j != i )
         {
@@ -96,12 +97,12 @@ void power(int number, int source, int target)
         }
         printf("%c\n", res_ch);     
       }
-      else
+      else// вывод много разрядных чисел
       {   
         char R[100] ;
         int a = res;        
         int i = 0, c;
-        while( a > 0 )
+        while( a > 0 )// разложение по разрядам в новой системе исчисления
         {  
           c = res / target  ;              
           c = res % target;
@@ -111,7 +112,7 @@ void power(int number, int source, int target)
           i++;                              
         }
         i -= 1;
-        while( i >= 0 )
+        while( i >= 0 )// вывод результата
         {
           if( R[i] < 10 )
           {
@@ -125,7 +126,7 @@ void power(int number, int source, int target)
         }
       }           
     }
-    else
+    else// если не вошло в условие (это на всякий случай)
     {
       printf("%d\n", res);    
     }
