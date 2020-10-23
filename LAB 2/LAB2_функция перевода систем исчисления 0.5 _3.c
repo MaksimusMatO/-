@@ -1,4 +1,4 @@
-#include <stdio.h>
+nclude <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 
@@ -12,7 +12,6 @@ int main()
   power(numb, sour, targ);
   getchar(); 
   getchar();
-  
   return 0;
 }
 
@@ -28,11 +27,7 @@ void power(int number, int source, int target)
       A[i]= number / (pow (10, i) );
       A[i]= A[i] % 10;
       i++;
-      a = a / 10;
-      if( A[i] > source )
-      {
-      	printf("Not source");
-      }                          
+      a = a / 10;                         
     }
     int j = 0;
     while( j != i ) 
@@ -66,15 +61,11 @@ void power(int number, int source, int target)
     int res = 0;
     int i = 0;
     while( a > 0 )
-  	{ 
-    	A[i] = number / (pow (10, i) );           
+    { 
+      A[i] = number / (pow (10, i) );           
       A[i] = A[i] % 10;            
       i++;
-      a = a / 10;
-      if( A[i] > source )
-      {
-      	printf("Not source");
-      }                          
+      a = a / 10;                       
     }
     int j = 0 ;
     while( j != i )
@@ -107,7 +98,7 @@ void power(int number, int source, int target)
       }
       else
       {   
-      	char R[100] ;
+        char R[100] ;
         int a = res;        
         int i = 0, c;
         while( a > 0 )
@@ -119,6 +110,7 @@ void power(int number, int source, int target)
           a = a / target;
           i++;                              
         }
+        i -= 1;
         while( i >= 0 )
         {
           if( R[i] < 10 )
