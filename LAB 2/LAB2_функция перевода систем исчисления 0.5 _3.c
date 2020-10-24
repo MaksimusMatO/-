@@ -19,14 +19,14 @@ void power(int number, int source, int target)
 {     
   if( source <= 10  && target < 10 )// диапазон числовых значений из 10ной в  любую менее 10ной
   {
-    int  array[100];
+    int array[100];
     int score = number;
     int res = 0;
     int i = 0;
     while( score > 0 )// разложение по разрядам исходной системы исчисления
     { 
-      array[i]= number / (pow (10, i) );
-      array[i]= array[i] % 10;
+      array[i] = number / (pow (10, i) );
+      array[i] = array[i] % 10;
       i++;
       score = score / 10;                         
     }
