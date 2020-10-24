@@ -7,7 +7,8 @@ int main(){
   printf("what Fibbonacci number to output: ");
   scanf("%d", &fib_num);
   printf( "%ld", get_fibbonachi_via_cycle(fib_num) );
-  getchar(); getchar();
+  getchar(); 
+  getchar();
   
   return 0;
 }
