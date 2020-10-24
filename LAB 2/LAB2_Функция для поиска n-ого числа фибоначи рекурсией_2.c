@@ -4,7 +4,7 @@ long get_fibbonachi_via_recursion(int number);
 int main()
 {
   int N;
-  printf("какое число Фиббоначи вывести :");
+  printf("what Fibbonacci number to output :");
   scanf("%d", &N);  
   printf("%ld ", get_fibbonachi_via_recursion(N) );
   getchar(); 
