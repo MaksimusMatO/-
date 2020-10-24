@@ -108,7 +108,7 @@ void power(int number, int source, int target)
           res_char = res / target;              
           res_char = res % target;
           res = res / target;
-          array_char[i] = (char) res_char;
+          array_char[i] = (char) res_char;// по разрядно записывает результат в масив
           score = score / target;
           i++;                              
         }
