@@ -26,7 +26,7 @@ long long get_fibbonachi_via_recursion(int number)
     return 1;
   }
 
-  static long long array[100];
+  static long long array[] = {1, 1};
   if( array[number] == 0 )
   {
     array[number] = get_fibbonachi_via_recursion(number - 1) + get_fibbonachi_via_recursion(number - 2); 
