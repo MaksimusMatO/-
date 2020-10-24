@@ -4,8 +4,8 @@ long get_fibbonachi_via_cycle(int number);
 
 int main(){
   int fib_num;
-  printf("какое число Фиббоначи вывести\n'после ввода нужного числа введите что-нибудь ещё': ");//после ввода нужного числа введите чтонибудь ещё?????
-  scanf("%d\n", &fib_num);
+  printf("what Fibbonacci number to output: ");
+  scanf("%d", &fib_num);
   printf( "%ld", get_fibbonachi_via_cycle (fib_num) );
   getchar(); getchar();
   
