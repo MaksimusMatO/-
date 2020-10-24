@@ -6,10 +6,10 @@ void power(int number, int source, int target);
 
 int main()
 {
-  int numb, sour, targ;
+  int number, source, target;
   printf("enter numbers ( number, current notation, total notation ) : ");
-  scanf("%d%d%d", &numb, &sour, &targ );
-  power(numb, sour, targ);
+  scanf("%d%d%d", &number, &source, &target );
+  power(number, source, target);
   getchar(); 
   getchar();
   return 0;
@@ -19,21 +19,21 @@ void power(int number, int source, int target)
 {     
   if( source <= 10  && target < 10 )// диапазон числовых значений из 10ной в  любую менее 10ной
   {
-    int  A[100];
+    int  array[100];
     int a = number;
     int res = 0;
     int i = 0;
     while( a > 0 )// разложение по разрядам исходной системы исчисления
     { 
-      A[i]= number / (pow (10, i) );
-      A[i]= A[i] % 10;
+      array[i]= number / (pow (10, i) );
+      array[i]= array[i] % 10;
       i++;
       a = a / 10;                         
     }
     int j = 0;
     while( j != i )// перевод в ведённую систему исчисления 
     {
-      res += A[j] * (pow (source, j) );   
+      res += array[j] * (pow (source, j) );   
       j++;
     }
     i = 0, a = res;
@@ -43,84 +43,85 @@ void power(int number, int source, int target)
       c = res % target;
       res= res / target;     
       i++;
-      A[i] = c;
+      array[i] = c;
       a = a / target;
     }
     while( i > 0 )// вывод результата
     {
-      printf("%d", A[i]);
+      printf("%d", array[i]);
       i--;
     }                    
   }
-  if( source == 0 || source == 1 || target == 0 || target == 1 )// если система исходная или конечная равна 0 или 1
+  else if( source == 0 || source == 1 || target == 0 || target == 1 )// если система исходная или конечная равна 0 или 1
   {
-    printf("0"); 
+    printf("0");
+     
   }
-  if( target >= 10 && source >= 2 )// перевод из любой в любую систему содержащую символьные значения
+  else if( target >= 10 && source >= 2 )// перевод из любой в любую систему содержащую символьные значения
   {
-    int  A[100], a = number;
+    int  array[100], score = number;
     int res = 0;
     int i = 0;
-    while( a > 0 )// разложение по разрядам в исходной
+    while( score > 0 )// разложение по разрядам в исходной
     { 
-      A[i] = number / (pow (10, i) );           
-      A[i] = A[i] % 10;            
+      array[i] = number / (pow (10, i) );           
+      array[i] = array[i] % 10;            
       i++;
-      a = a / 10;                       
+      score = score / 10;                       
     }
-    int j = 0 ;
+    int j = 0;
     while( j != i )// перевод в ведённую систему исчисления 
     {
-      res += A[j] * (pow (source, j) );   
+      res += array[j] * (pow (source, j) );   
       j++;    
     }        
     if( target > 10 )// условие 1ое если конечная система больше десяти (это на всякий случай)
     {   
-      char R[ i + 1 ];
-      char res_ch = 0;
-      j=0;
+      char array_char[ i + 1 ];
+      char res_char = 0;
+      j = 0;
       if( i <= 1)// вывод одноразрядных чисел 
       {
         while( j != i )
         {
-          R[j] = (char) A[j];   
-          if( R[j] < 10 )
+          array_char[j] = (char) array[j];   
+          if( array_char[j] < 10 )
           {
-            res += ( R[j] + 48 )* (pow (source, j ));   
+            res_char += ( array_char[j] + 48 )* (pow (source, j ));   
           }
           else
           {
-            char ch = (char) R[j];
-            res_ch += ( ch + 55 ) * (pow (source, j )) ;
+            char ch = (char) array_char[j];
+            res_char += ( ch + 55 ) * (pow (source, j )) ;
           }
           j++;
         }
-        printf("%c\n", res_ch);     
+        printf("%c", res_char);     
       }
       else// вывод много разрядных чисел
       {   
-        char R[100] ;
-        int a = res;        
-        int i = 0, c;
-        while( a > 0 )// разложение по разрядам в новой системе исчисления
+        char array_char[100] ;
+        int score = res;        
+        int i = 0, res_char;
+        while( score > 0 )// разложение по разрядам в новой системе исчисления
         {  
-          c = res / target  ;              
-          c = res % target;
+          res_char = res / target;              
+          res_char = res % target;
           res = res / target;
-          R[i] = (char) c;
-          a = a / target;
+          array_char[i] = (char) res_char;
+          score = score / target;
           i++;                              
         }
         i -= 1;
         while( i >= 0 )// вывод результата
         {
-          if( R[i] < 10 )
+          if( array_char[i] < 10 )
           {
-            printf("%c", R[i] + 48);
+            printf("%c", array_char[i] + 48);
           }
           else
           {
-            printf("%c", R[i] + 55);
+            printf("%c", array_char[i] + 55);
           }
           i--;
         }
