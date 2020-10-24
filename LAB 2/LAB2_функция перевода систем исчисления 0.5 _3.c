@@ -20,15 +20,15 @@ void power(int number, int source, int target)
   if( source <= 10  && target < 10 )// диапазон числовых значений из 10ной в  любую менее 10ной
   {
     int  array[100];
-    int a = number;
+    int score = number;
     int res = 0;
     int i = 0;
-    while( a > 0 )// разложение по разрядам исходной системы исчисления
+    while( score > 0 )// разложение по разрядам исходной системы исчисления
     { 
       array[i]= number / (pow (10, i) );
       array[i]= array[i] % 10;
       i++;
-      a = a / 10;                         
+      score = score / 10;                         
     }
     int j = 0;
     while( j != i )// перевод в ведённую систему исчисления 
@@ -36,15 +36,15 @@ void power(int number, int source, int target)
       res += array[j] * (pow (source, j) );   
       j++;
     }
-    i = 0, a = res;
-    int c; 
-    while( a > 0 )// разложение по разрядам в новой системе исчисления
+    i = 0, score = res;
+    int res_char; 
+    while( score > 0 )// разложение по разрядам в новой системе исчисления
     { 
-      c = res % target;
+      res_char = res % target;
       res= res / target;     
       i++;
-      array[i] = c;
-      a = a / target;
+      array[i] = res_char;
+      score = score / target;
     }
     while( i > 0 )// вывод результата
     {
