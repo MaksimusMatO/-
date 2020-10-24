@@ -12,6 +12,7 @@ int main()
   power(number, source, target);
   getchar(); 
   getchar();
+  
   return 0;
 }
 
