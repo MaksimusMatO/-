@@ -9,7 +9,8 @@ int main()
 	char array_char[100];
   	int array_int[100];
 	int size;
-  	int i = 0, j = 0;
+  	int i = 0;
+	int j = 0;
 	file_array = fopen( "all/file_array.txt", "r" );
 	if( file_array != NULL )
 	{
