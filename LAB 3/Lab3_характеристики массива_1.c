@@ -54,4 +54,4 @@ int main()
     printf("middle %.2f\n", middle);
 
 	return 0;
-}
+} 
