@@ -17,26 +17,26 @@ int main()
 	float middle;
 	int maximum = array[0];
 	int minimum = array[size - 1];
-	for(int i = 0; i < size; i++)
+	for( int i = 0; i < size; i++ )
 	{	
 		if(array[i] > maximum)
                 {
                    	maximum = array[i];
                 }
 	}
-        for(int i = 0; i < size; i++)
+        for( int i = 0; i < size; i++ )
 	{	
-		if(array[i]< minimum)
+		if( array[i] < minimum )
                 {
                         minimum = array[i];
                 }
 	}
-	for(int i = 0; i < size; i++ )
+	for( int i = 0; i < size; i++ )
 	{
                 middle += array[i];        
 	}
         middle = middle / size;
-	for(int i = 0; i < size; i++ )
+	for( int i = 0; i < size; i++ )
         {
                 printf("%d ", array[i]);       
         }
