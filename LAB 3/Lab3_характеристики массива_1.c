@@ -34,8 +34,7 @@ int main()
 	}
 	for(int i = 0; i < size; i++ )
 	{
-        	middle += array[i];
-        
+        	middle += array[i];        
 	}
     	middle = middle / size;
 	for(int i = 0; i < size; i++ )
