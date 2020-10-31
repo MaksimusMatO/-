@@ -25,6 +25,7 @@ int is_simple(int number)
         return 0;
       }       
     }
+    
     return 1;
   }
   else if( (number >= 1) || (number <= 3))
