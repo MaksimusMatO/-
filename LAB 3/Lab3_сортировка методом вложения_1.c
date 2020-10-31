@@ -12,14 +12,13 @@ int main()
 	int array[size];
 	for( int i = 0; i < size; i++ )
 	{
-        array[i] = 100 - rand() % 200;
+        	array[i] = 100 - rand() % 200;
 	}
 	int mid;
 	int max = array[0];
 	int min = array[size - 1];
 	for(int i =0 ; i<n ; i++)
-	{
-		
+	{	
 		if(array[i] > max)
         {
             max = array[i];
@@ -31,9 +30,8 @@ int main()
 	}
 	for(int i = 0; i < size; i++ )
 	{
-		int cost_max = 0, cost_min = 0;
-
-		for( int j = 0; j != i; j++ )
+	    int cost_max = 0, cost_min = 0;
+	    for( int j = 0; j != i; j++ )
 	    {
 	    	if( array[j] != array[i] )
 	    	{
