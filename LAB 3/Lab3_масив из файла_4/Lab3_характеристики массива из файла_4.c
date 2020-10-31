@@ -28,30 +28,30 @@ int main()
 		printf("\nfile was not opened");
         return 1;
 	}
-    int median = array_int[i / 2];
+        int median = array_int[i / 2];
 	int middle;
 	int maximum = array_int[2];
 	int minimum = array_int[2];
-    for(int n = 0; n < i; n++)
+    	for(int n = 0; n < i; n++)
 	{	
 		if(array_int[n] > maximum)
         {
             maximum = array_int[n];
         }
 	}
-    for(int n = 0; n < i; n++)
+    	for(int n = 0; n < i; n++)
 	{	
 		if(array_int[n]< minimum)
         {
             minimum = array_int[n];
         }
 	}
-    for(int n = 0; n < i; n++ )
+    	for(int n = 0; n < i; n++ )
 	{
 		mmiddle += array_int[n];
 	}
-    middle = middle / i;
-    printf("\nmedian = %d", median);
+    	middle = middle / i;
+    	printf("\nmedian = %d", median);
  	printf("\nminimum = %d", minimum); 
   	printf("\nmiddle = %d", middle);
   	printf("\nmaximum = %d", maximum);
