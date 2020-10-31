@@ -48,26 +48,9 @@ int main()
 	}
     for(int n = 0; n < i; n++ )
 	{
-		int cost_max = 0, cost_min = 0;
-		for( int t = 0; t != n; t++ )
-	    {
-	    	if( array_int[t] != array_int[n] )
-	    	{
-		        if( array_int[t] > array_int[n] )
-		        {
-		   			cost_max++;
-		        }
-		    	else
-		    	{     
-		    		cost_min++;
-		    	}
-	    	}
-	    }                
-		if( cost_max == cost_min )
-		{
-			middle = array_int[n]; 	
-		}
+		mmiddle += array_int[n];
 	}
+    middle = middle / i;
     printf("\nmedian = %d", median);
  	printf("\nminimum = %d", minimum); 
   	printf("\nmiddle = %d", middle);
