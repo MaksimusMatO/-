@@ -15,7 +15,7 @@ int main()
         array[i] = rand() % 100;
 	}
     int median;
-	int middle = array[size / 2];
+	int middle;
 	int maximum = array[0];
 	int minimum = array[size - 1];
 	for(int i = 0; i < size; i++)
@@ -23,7 +23,6 @@ int main()
 		if(array[i] > maximum)
         {
             maximum = array[i];
-            printf("max %d\n", i);
         }
 	}
     for(int i = 0; i < size; i++)
@@ -31,7 +30,6 @@ int main()
 		if(array[i]< minimum)
         {
             minimum = array[i];
-            printf("min %d\n", i);
         }
 	}
 	for(int i = 0; i < size; i++ )
@@ -53,14 +51,14 @@ int main()
 	    }
 		if( cost_max == cost_min )
 		{
-			median = array[i];	
+			middle= array[i];	
 		}
 	}
 	for(int i = 0; i < size; i++ )
     {
         printf("%d ", array[i]);
     }
-    middle = array[size / 2];
+    median = array[size / 2];
     printf("\nmedian %d\n", median);
     printf("maximum %d\n", maximum);
     printf("minimum %d\n", minimum);
