@@ -19,14 +19,14 @@ int main()
         	printf("%d ", array[i]);       
     	}
         sort( array, size);// сортировка массива для поиска медианы
-    	int median;
+    	float median;
         if( (size % 2) != 0)
 	{
 		median = array[size / 2];
 	}
 	else if( (size % 2) == 0 )
 	{
-        	median = (array[(size / 2) - 1] + array[size / 2]) / 2;
+        	median = (array[(size / 2) - 1] + array[size / 2]) / 2.0;
     	}
 	float middle = 0;
 	int maximum = array[0];
@@ -50,7 +50,7 @@ int main()
         	middle += array[i];        
 	}
     	middle = middle / size;
-    	printf("\nmedian %d\n", median);
+    	printf("\nmedian %.2f\n", median);
     	printf("maximum %d\n", maximum);
     	printf("minimum %d\n", minimum);
     	printf("middle %.2f\n", middle);
