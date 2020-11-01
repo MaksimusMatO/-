@@ -14,7 +14,7 @@ int main()
 	{
         	array[i] = rand() % 100;
 	}
-        for( int i = 0; i < size; i++ )// вывод массива
+        for( int i = 0; i < size; i++ )// водьмассива
     	{
         	printf("%d ", array[i]);       
     	}
@@ -26,7 +26,7 @@ int main()
 	}
 	else if( (size % 2) == 0 )
 	{
-        	median = array[(size / 2) - 1];
+        	median = (array[(size / 2) - 1] + array[size / 2]) / 2;
     	}
 	float middle = 0;
 	int maximum = array[0];
