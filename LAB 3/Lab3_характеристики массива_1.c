@@ -14,7 +14,7 @@ int main()
 	{
         	array[i] = rand() % 100;
 	}
-        for( int i = 0; i < size; i++ )// водьмассива
+        for( int i = 0; i < size; i++ )// вывод массива
     	{
         	printf("%d ", array[i]);       
     	}
