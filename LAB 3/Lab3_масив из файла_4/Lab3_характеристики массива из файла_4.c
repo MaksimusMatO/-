@@ -31,14 +31,14 @@ int main()
         return 1;
 	}
 	shell_sort( array_int , i );
-	int median;
-	if( (i % 2) == 0)
+	float median;
+	if( (i % 2) == 0 )
 	{
-		median = (array_int[i / 2] + array_int[(i / 2) + 1]) / 2.0 ;
+		median = (array_int[i / 2] + array_int[(i / 2) - 1]) / 2.0;
 	}
-	else
+	else if( (i % 2) != 0 )
 	{
-        	median = array_int[(i / 2) + 1];
+        	median = array_int[(i / 2)];
     	}
 	float middle = 0.0;
 	int maximum = array_int[2];
@@ -62,7 +62,7 @@ int main()
 		middle += array_int[t];
 	}
     	middle = middle / i;
-    	printf("\nmedian = %d", median);
+    	printf("\nmedian = %.2f", median);
  	printf("\nminimum = %d", minimum); 
   	printf("\nmiddle = %.2f", middle);
   	printf("\nmaximum = %d", maximum);
