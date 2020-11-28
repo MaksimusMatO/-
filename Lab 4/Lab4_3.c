@@ -6,27 +6,26 @@ int* get_simples( int count );
 struct store
 {
 	int *numbers;
-	int *eratosfen;
 };
 
 int main()
 {       
-        struct store store;
+    	struct store store;
 	int count;
-        int *array;
+    	int *array;
 	printf("enter count ");
 	scanf("%d", &count);
-        count--;
-        printf("\n");
+    	count--;
+    	printf("\n");
 	array = get_simples(count);
-        printf("\n");
+    	printf("\n");
 	for( int i = 0; i < count; i++ )
 	{
-                if( array[i] != 0 )
-                {
-                printf(" %d", array[i]);
-                printf("\n");       
-                }
+        	if( array[i] != 0 )
+        	{
+        		printf(" %d", array[i]);
+        		printf("\n");       
+        	}
 	}
 	getchar();
 	getchar();
@@ -36,9 +35,9 @@ int main()
 
 int* get_simples( int count )
 {
-        struct store store;
+    	struct store store;
+    	int *array[count];
 	store.numbers = (int*) malloc(count * sizeof(int));
-	store.eratosfen = (int*) malloc(count * sizeof(int));
 	for( int i = 0; i < count; i++ )
 	{
 		store.numbers[i] = i + 2;
@@ -54,8 +53,10 @@ int* get_simples( int count )
 					store.numbers[a] = 0;
 				}
 			}
-		}
+		}  
 	}
+    	*array = store.numbers;
+    	free(store.numbers);
 
-	return store.numbers;
+	return *array;
 }
