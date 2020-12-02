@@ -2,45 +2,41 @@
 #include <stdlib.h>
 
 struct store
-{       
-	int size;
-    	int *number;
-	int *quality;      
+{      
+        int number;
+        char *charact;
+    
 };
 
 int main()
 {       
-    	struct store store;
-    	printf("enter size ");
-    	scanf("%d", &store.size);
-    	store.number = (int*) malloc(store.size * sizeof(int));
-    	store.quality = (int*) malloc(store.size * sizeof(int));
-	printf("enter numbers ");
-    	for( int i = 0; i < store.size; i++ )
-    	{
-        	scanf("%d", &store.number[i]);
-        	if( (store.number[i] % 2) == 0 )
-        	{
-        	        store.quality[i] = 0;
-        	}
-        	else
-        	{
-        	        store.quality[i] = 1;
-        	}
-    	}
-    	for( int i = 0; i < store.size; i++ )
-    	{
-        	printf("\n");
-        	printf("%d ", store.number[i]);
-        	if( store.quality[i] == 1 )
-        	{
-                	printf("number not even");
-        	}
-        	else
-        	{
-        	    printf("number even");    
-        	}
-    	}
+        int size;
+        printf("enter size :");
+        scanf("%i", &size);
+        struct store store[size];
+        for( int i = 0; i < size; i++ )
+        {
+                scanf("%i", &store[i].number);
+                if( (store[i].number % 2) == 0 )
+                {
+                        store[i].charact = "even" ;
+                }
+                else if(store[i].number == 0)
+                {
+                        store[i].charact = "null" ;
+                }
+                else
+                {
+                        store[i].charact = "noteven" ;        
+                }
+
+        }
+        //int n = sizeof(store)/sizeof(store[0]);
+        for( int i = 0; i < size; i++ )
+        {
+                printf("%d - %s\n", store[i].number, store[i].charact);
+        }
+
     	getchar();
     	getchar();	
 
