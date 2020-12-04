@@ -17,13 +17,13 @@ int main()
         for( int i = 0; i < size; i++ )
         {
                 scanf("%i", &store[i].number);
-                if( (store[i].number % 2) == 0 )
-                {
-                        store[i].charact = "even" ;
-                }
-                else if(store[i].number == 0)
+                if( store[i].number == 0 )
                 {
                         store[i].charact = "null" ;
+                }
+                else if( (store[i].number % 2) == 0 )
+                {
+                        store[i].charact = "even" ;
                 }
                 else
                 {
